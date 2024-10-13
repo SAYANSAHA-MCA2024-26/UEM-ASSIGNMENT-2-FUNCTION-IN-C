@@ -1,13 +1,15 @@
 #include<stdio.h>
 int armstrong(int);
 int perfect(int);
+int prime(int);
 int main()
 {
-	int n,arm,per;
+	int n,arm,per,pri;
 	printf("enter the number:");
 	scanf("%d",&n);
 	arm=armstrong(n);
 	per=perfect(n);
+	pri=prime(n);
 	return 0;
 }
 int armstrong(int n)
@@ -47,5 +49,26 @@ int perfect(int n)
 	else
 	{
 		printf("this number is not perfect number:%d\n",n);
+	}
+}
+int prime(int n)
+{
+	int flag=0,m,i;
+	m=n/2;
+	for(i=2;i<=m;i++)
+	{
+		if(n%i==0)
+		{
+			flag=1;
+			break;
+		}
+	}
+	if(flag==0)
+	{
+		printf("this number is prime number:%d",n);
+	}
+	else
+	{
+		printf("this number is not prime number:%d",n);
 	}
 }
